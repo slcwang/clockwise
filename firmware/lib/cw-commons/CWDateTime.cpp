@@ -59,9 +59,4 @@ long CWDateTime::getMilliseconds()
   return myTZ.ms(TIME_NOW);
 }
 
-bool CWDateTime::isAM() 
-{
-  return myTZ.isAM();
-}
-
 

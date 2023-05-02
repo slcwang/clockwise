@@ -6,12 +6,18 @@ Preferences preferences;
 
 struct ClockwiseParams
 {
+    //these should match the html DOM ids in the forms in HTML
     const char* const PREF_SWAP_BLUE_GREEN = "swapBlueGreen";
     const char* const PREF_USE_24H_FORMAT = "use24hFormat";
     const char* const PREF_DISPLAY_BRIGHT = "displayBright";
     const char* const PREF_TIME_ZONE = "timeZone";
     const char* const PREF_WIFI_SSID = "wifiSsid";
     const char* const PREF_WIFI_PASSWORD = "wifiPwd";
+    const char* const PREF_SYMBOL_1 = "symbol1";
+    const char* const PREF_SYMBOL_2 = "symbol2";
+    const char* const PREF_SYMBOL_3 = "symbol3";
+    const char* const PREF_SYMBOL_4 = "symbol4";
+    const char* const PREF_SYMBOL_5 = "symbol5";
 
 
     bool swapBlueGreen;
@@ -20,6 +26,11 @@ struct ClockwiseParams
     String timeZone;
     String wifiSsid;
     String wifiPwd;
+    String symbol1;
+    String symbol2;
+    String symbol3;
+    String symbol4;
+    String symbol5;
 
 
     ClockwiseParams() {
@@ -41,6 +52,11 @@ struct ClockwiseParams
         preferences.putString(PREF_TIME_ZONE, timeZone);
         preferences.putString(PREF_WIFI_SSID, wifiSsid);
         preferences.putString(PREF_WIFI_PASSWORD, wifiPwd);
+        preferences.putString(PREF_SYMBOL_1, symbol1);
+        preferences.putString(PREF_SYMBOL_2, symbol2);
+        preferences.putString(PREF_SYMBOL_3, symbol3);
+        preferences.putString(PREF_SYMBOL_4, symbol4);
+        preferences.putString(PREF_SYMBOL_5, symbol5);
     }
 
     void load()
@@ -51,6 +67,11 @@ struct ClockwiseParams
         timeZone = preferences.getString(PREF_TIME_ZONE, "America/Sao_Paulo");
         wifiSsid = preferences.getString(PREF_WIFI_SSID, "");
         wifiPwd = preferences.getString(PREF_WIFI_PASSWORD, "");
+        symbol1 = preferences.getString(PREF_SYMBOL_1, "NQ=F");
+        symbol2 = preferences.getString(PREF_SYMBOL_2, "ES=F");
+        symbol3 = preferences.getString(PREF_SYMBOL_3, "YM=F");
+        symbol4 = preferences.getString(PREF_SYMBOL_4, "^HSI");
+        symbol5 = preferences.getString(PREF_SYMBOL_5, "0005.HK");
     }
 
 };
